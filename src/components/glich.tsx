@@ -104,6 +104,8 @@ const GlitchApp = () => {
   const glitchArray = useRef<Glitch[]>([]);
 
   useEffect(() => {
+    const glitchArrayCurrent = glitchArray.current;
+    
     arrayElements.current = Array.from(
       document.querySelectorAll(".content")
     ) as HTMLElement[];

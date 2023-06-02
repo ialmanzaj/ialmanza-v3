@@ -2,21 +2,20 @@ import Link from 'next/link';
 
 import NavLink from '@/components/header/nav-link';
 import ThemeToggle from '@/components/theme-toggle';
+import Logo from '@/components/header/logo';
 
 const NAV_ITEMS = [
   { path: 'blog', name: 'Blog' },
   { path: 'about', name: 'About' },
-  { path: 'contact', name: 'Contact' },
-  { path: 'projects', name: 'Projects' },
 ];
 
 export default function Header() {
   return (
-    <nav className="flex flex-col justify-between py-12 md:flex-row">
-      <Link href="/" className="self-start md:self-auto">
-        <h1 className="text-3xl font-bold">Isaac Almanza</h1>
+    <nav className="flex justify-between py-12 sm:flex-row">
+      <Link href="/" className="self-start md:self-auto my-6">
+       <Logo />
       </Link>
-      <div className="my-6 flex space-x-8 self-center md:my-0 md:self-auto">
+      <div className="my-6 flex space-x-8  md:self-auto">
         <ul className="flex space-x-8">
           {NAV_ITEMS.map((item) => (
             <li
@@ -26,9 +25,12 @@ export default function Header() {
               <NavLink path={item.path}>{item.name}</NavLink>
             </li>
           ))}
+          <li>
+          <ThemeToggle />
+          </li>
         </ul>
         <div className="absolute right-[10vw] top-12 md:static">
-          <ThemeToggle />
+         
         </div>
       </div>
     </nav>
