@@ -3,13 +3,6 @@
 @tailwind utilities;
 
 @layer components {
-  .bg-primary {
-    @apply bg-[#f7f7f7] dark:bg-customGray-dark;
-  }
-
-  .bg-secondary {
-    @apply bg-customGray-base dark:bg-customGray-light;
-  }
 
   .text-primary {
     @apply text-black dark:text-white;
@@ -28,4 +21,31 @@ a,
 div,
 button {
   -webkit-tap-highlight-color: transparent;
+}
+
+body{
+	background: #0a0a0a;
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+	overflow : hidden;
+}
+
+.content{
+	font-family: monospace;
+  margin: auto;
+	color: white;
+	padding: 5%;;
+}
+
+#title{
+	text-align: center;
+	text-transform: uppercase;
+	font-size : 1.5em;
+}
+
+#text{
+	text-align: left;
+	font-size : 1.25em;
+	text-transform: lowercase;
 }
