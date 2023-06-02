@@ -3,14 +3,14 @@
 
 const logo = {
   flexShrink: 0,
-  width: "68%",
+  width: "90%",
   height: "auto",
   display: "block",
 }
 
 export default function Logo() {
   return (
-    <svg  style={logo} viewBox="0 0 3153 719" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <svg  className="md:max-w-[60%]" style={logo} viewBox="0 0 3153 719" version="1.1" xmlns="http://www.w3.org/2000/svg">
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="Group-7" fill="#ffffff">
             <g id="c" transform="translate(2550.000000, 4.000000)" fill-rule="nonzero">

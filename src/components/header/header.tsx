@@ -12,10 +12,10 @@ const NAV_ITEMS = [
 export default function Header() {
   return (
     <nav className="flex justify-between py-12 sm:flex-row">
-      <Link href="/" className="self-start md:self-auto my-6">
+      <Link href="/" className="self-start md:self-auto my-auto">
        <Logo />
       </Link>
-      <div className="my-6 flex space-x-8  md:self-auto">
+      <div className="my-auto flex space-x-8  md:self-auto">
         <ul className="flex space-x-8">
           {NAV_ITEMS.map((item) => (
             <li
@@ -25,13 +25,11 @@ export default function Header() {
               <NavLink path={item.path}>{item.name}</NavLink>
             </li>
           ))}
-          <li>
+          <li className='top-12'>
           <ThemeToggle />
           </li>
         </ul>
-        <div className="absolute right-[10vw] top-12 md:static">
-         
-        </div>
+        
       </div>
     </nav>
   );
