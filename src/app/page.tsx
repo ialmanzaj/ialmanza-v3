@@ -7,7 +7,7 @@ export const metadata = {
 export default function HomePage() {
   return (<>
      <h1 className="mt-12 text-center text-3xl font-bold content" id="title">Isaac Almanza本</h1>
-      <GlitchApp />
+      <GlitchApp >
       <div id="text" className='content'>
         Numinous euro-pop hacker plastic geodesic realism sprawl. Tokyo tube
         assassin fetishism concrete weathered San Francisco. Human receding
@@ -25,6 +25,8 @@ export default function HomePage() {
         into vinyl Shibuya pistol. Towards marketing weathered pre-corrupted tattoo
         artisanal. Drone 3D-printed lights euro-pop sentient tower urban.
       </div>
+
+      </GlitchApp>
     </>
     );
 }
