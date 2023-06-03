@@ -4,6 +4,18 @@
 
 @layer components {
 
+	.bg-primary {
+		@apply bg-[#fff] dark:bg-black;
+	}
+
+	.fill-primary {
+		@apply fill-black dark:fill-white;
+	}
+	
+	.bg-secondary {
+		@apply bg-[#0a0a0a] dark:bg-customGray-light;
+	 }
+
   .text-primary {
     @apply text-black dark:text-white;
   }
@@ -24,7 +36,6 @@ button {
 }
 
 body{
-	background: #0a0a0a;
 	display: flex;
 	flex-direction: column;
 	height: 100vh;
@@ -33,7 +44,6 @@ body{
 .content{
 	font-family: monospace;
   margin: auto;
-	color: white;
 	padding: 5%;;
 }
 
