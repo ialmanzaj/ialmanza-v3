@@ -99,53 +99,58 @@ class Glitch {
   }
 }
 
-const GlitchApp = () => {
+const GlitchApp = ({ children }) => {
   const arrayElements = useRef<HTMLElement[]>([]);
-  const glitchArray = useRef<Glitch[]>([]);
+  const intervalIds = useRef<NodeJS.Timeout[]>([]);
+
+  const startGlitchAnimation = (index: number) => {
+    const glitch = arrayElements.current[index];
+    const intervalId = setInterval(() => {
+      glitch.innerText = generateRandomText(glitch.innerText);
+    }, 85);
+    intervalIds.current[index] = intervalId;
+  };
+
+  const stopGlitchAnimation = (index: number) => {
+    const glitch = arrayElements.current[index];
+    clearInterval(intervalIds.current[index]);
+    glitch.innerText = glitch.dataset.originalText || '';
+  };
+
+  const generateRandomText = (text: string) => {
+    const chars = "日本語☺Σ×Π#-_¯—→↓↑←0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZ";
+    let randomText = "";
+    for (let i = 0; i < text.length; i++) {
+      if (text[i] !== " ") {
+        const randomChar = chars[Math.floor(Math.random() * chars.length)];
+        randomText += randomChar;
+      } else {
+        randomText += " ";
+      }
+    }
+    return randomText;
+  };
 
   useEffect(() => {
-    const glitchArrayCurrent = glitchArray.current;
-    
-    arrayElements.current = Array.from(
-      document.querySelectorAll(".content")
-    ) as HTMLElement[];
-    for (let i = 0; i < arrayElements.current.length; i++) {
-      let selector = arrayElements.current[i];
-      let randLetterNumber = 2 + Math.floor(Math.random() * 8);
-      let randGlitchTime = 500 + Math.floor(Math.random() * 1500);
-      let randGlitchPauseTime = 500 + Math.floor(Math.random() * 2500);
-      let glitch = new Glitch({
-        selector: { current: selector },
-        index: i,
-        numberOfGlitchedLetter: randLetterNumber,
-        timeGlitch: 200,
-        timePerLetter: 85,
-        timeBetweenGlitch: randGlitchPauseTime,
-      });
-      glitch.init();
-      glitchArray.current.push(glitch);
-    }
-
-    const update = () => {
-      for (let i = 0; i < glitchArray.current.length; i++) {
-        let glitch = glitchArray.current[i];
-        glitch.glitch();
-      }
-    };
-
-    update();
+    arrayElements.current = Array.from(document.querySelectorAll(".content")) as HTMLElement[];
+    arrayElements.current.forEach((glitch, index) => {
+      glitch.dataset.originalText = glitch.innerText;
+      glitch.addEventListener("mouseenter", () => startGlitchAnimation(index));
+      glitch.addEventListener("mouseleave", () => stopGlitchAnimation(index));
+    });
 
     return () => {
-      glitchArray.current.forEach((glitch) => {
-        glitch.glitch();
+      arrayElements.current.forEach((glitch, index) => {
+        glitch.removeEventListener("mouseenter", () => startGlitchAnimation(index));
+        glitch.removeEventListener("mouseleave", () => stopGlitchAnimation(index));
+        stopGlitchAnimation(index);
       });
     };
   }, []);
 
   return (
     <div className="glitch">
-    
-      
+      {children}
     </div>
   );
 };
