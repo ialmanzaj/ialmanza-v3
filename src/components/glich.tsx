@@ -99,7 +99,7 @@ class Glitch {
   }
 }
 
-const GlitchApp = ({ children }) => {
+const GlitchApp: React.FC<{ children?: React.ReactNode }> = ({ children }) => {
   const arrayElements = useRef<HTMLElement[]>([]);
   const intervalIds = useRef<NodeJS.Timeout[]>([]);
 
