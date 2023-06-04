@@ -11,10 +11,10 @@ export const metadata = {
 
 export default async function BlogPage() {
   const allPosts = await getAllPostsFromNotion();
+  const posts = allPosts.filter((post) => post.published)
 
   const allCategories = toUniqueArray(
-    allPosts
-      .filter((post) => post.published)
+    posts
       .map((post) => post.categories)
       .flat()
   ).sort();
@@ -25,7 +25,7 @@ export default async function BlogPage() {
         <SearchBar />
         <CategoryFilter allCategories={allCategories} />
       </section>
-      <PostsGrid allPosts={allPosts} />
+      <PostsGrid allPosts={posts} />
     </>
   );
 }
