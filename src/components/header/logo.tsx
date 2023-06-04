@@ -4,14 +4,14 @@
 const logo = {
   flexShrink: 0,
   width: "100%",
-  height: "auto",
+  height: "90%",
   display: "block",
 }
 
 export default function Logo() {
   return (
     <svg
-  className="md:max-w-[60%]"
+  className="sm:max-w-[40%] md:max-w-[60%]"
   style={logo}
   viewBox="0 0 3153 719"
   version="1.1"

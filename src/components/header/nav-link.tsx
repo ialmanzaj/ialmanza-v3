@@ -14,7 +14,7 @@ export default function NavLink({
   const isActive = path.split('?')[0] === segment;
 
   return (
-    <Link href={`/${path}`} className={`group ${isActive && 'text-primary'}`}>
+    <Link href={`/${path}`} className={`content group ${isActive && 'text-primary'}`}>
       {children}
       <span
         className={`block h-0.5 max-w-0 bg-black transition-all duration-300 group-hover:max-w-full dark:bg-white ${

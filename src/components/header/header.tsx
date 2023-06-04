@@ -12,7 +12,7 @@ const NAV_ITEMS = [
 export default function Header() {
   return (
     <nav className="flex justify-between py-12 sm:flex-row">
-      <Link href="/" className="self-start md:self-auto my-auto">
+      <Link href="/" className="self-start md:self-auto my-auto mr-3.5">
        <Logo />
       </Link>
       <div className="my-auto flex space-x-8  md:self-auto">
