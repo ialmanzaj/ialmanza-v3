@@ -7,6 +7,8 @@ import Provider from '@/components/provider';
 import ScrollUpButton from '@/components/scroll-up-button';
 import '@/styles/globals.css';
 import '@/styles/paginate.css';
+import { Analytics } from '@vercel/analytics/react';
+
 
 export const metadata = {
   title: {
@@ -30,6 +32,7 @@ export default function RootLayout({
             <ScrollUpButton />
           </div>
         </Provider>
+        <Analytics />
       </body>
     </html>
   );
