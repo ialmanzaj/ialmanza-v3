@@ -5,8 +5,8 @@ import { useState } from 'react';
 import PostCard from '@/components/posts/post-card';
 import { Post } from '@/types/post';
 
-const INITIAL_NUM_POSTS = 6;
-const ADDITIONAL_NUM_POSTS = 6;
+const INITIAL_NUM_POSTS = 3;
+const ADDITIONAL_NUM_POSTS = 3;
 
 export default function RelatedPosts({ posts }: { posts: Post[] }) {
   const [numPosts, setNumPosts] = useState(INITIAL_NUM_POSTS);

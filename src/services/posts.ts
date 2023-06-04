@@ -35,7 +35,9 @@ export async function getAllPostsFromNotion() {
       const date = properties[propertyMap['Date']][0][1][0][1]['start_date'];
       const published = properties[propertyMap['Published']][0][0] === 'Yes';
 
-      allPosts.push({
+      allPosts
+      .filter((post) => post.published)
+      .push({
         id,
         title,
         slug,
