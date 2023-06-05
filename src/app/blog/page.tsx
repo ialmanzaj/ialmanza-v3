@@ -13,17 +13,9 @@ export default async function BlogPage() {
   const allPosts = await getAllPostsFromNotion();
   const posts = allPosts.filter((post) => post.published)
 
-  const allCategories = toUniqueArray(
-    posts
-      .map((post) => post.categories)
-      .flat()
-  ).sort();
-
   return (
     <>
       <section className="mb-16 mt-0 space-y-8 md:mt-20">
-        <SearchBar />
-        <CategoryFilter allCategories={allCategories} />
       </section>
       <PostsGrid allPosts={posts} />
     </>
