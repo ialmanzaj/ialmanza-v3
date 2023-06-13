@@ -12,12 +12,12 @@ export default function HomePage() {
       <div className="max-w-2xl mx-auto mt-20 flex-1">
         <div className="my-12">
           <h1 className="tracking-wide text-6xl">
-            <span className="leading-10">Isaac Almanza<br></br></span>
-             <span className="leading-10">
-              Software engineer</span></h1>
+            <span className="leading-12">Hello 👋🏽<br></br> I'm Isaac Almanza</span>
+             
+          </h1>
         </div>
         <p className=" font-light text-lg	leading-9	tracking-normal">
-        He has being building fintech products for the last 5 years in Latam. Most recently at a neobank based out of Mexico.  
+        I'm a software engineer and entrepreneur. I have been building fintech products for the last 5 years in Latam. Most recently at Fondeadora, neobank based out of Mexico.  
         Now transitioning into web3 focusing on smart contracts with solidity, user interfaces, and everything in between. 
         </p><br></br>
         <p className=" font-light text-lg	leading-9	tracking-normal">
