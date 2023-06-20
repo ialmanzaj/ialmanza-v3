@@ -1,4 +1,5 @@
-"use client"
+'use client';
+
 import React, { useEffect, useRef } from 'react';
 
 function Rotator() {
@@ -29,11 +30,44 @@ function Rotator() {
 
   return (
     <div className="rotator">
-        <div style={{ position: 'absolute', pointerEvents: 'none', userSelect: 'none', borderRadius: 'inherit', top: 0, right: 0, bottom: 0, left: 0 }} data-framer-background-image-wrapper="true">
-            <div style={{ display: 'contents', borderRadius: 'inherit', pointerEvents: 'none' }}>
-              <img ref={imgRef} src="https://framerusercontent.com/images/Jd51DWOxRe2H9zt5chkFIujpM.png" alt="Translucent blob, iridescent blob" style={{ pointerEvents: 'none', userSelect: 'none', display: 'block', width: '100%', height: '100%', borderRadius: 'inherit', objectPosition: 'center', objectFit: 'contain', imageRendering: 'auto' }} />
-            </div>
+      <div
+        style={{
+          position: 'absolute',
+          pointerEvents: 'none',
+          userSelect: 'none',
+          borderRadius: 'inherit',
+          top: 0,
+          right: 0,
+          bottom: 0,
+          left: 0,
+        }}
+        data-framer-background-image-wrapper="true"
+      >
+        <div
+          style={{
+            display: 'contents',
+            borderRadius: 'inherit',
+            pointerEvents: 'none',
+          }}
+        >
+          <img
+            ref={imgRef}
+            src="https://framerusercontent.com/images/Jd51DWOxRe2H9zt5chkFIujpM.png"
+            alt="Translucent blob, iridescent blob"
+            style={{
+              pointerEvents: 'none',
+              userSelect: 'none',
+              display: 'block',
+              width: '100%',
+              height: '100%',
+              borderRadius: 'inherit',
+              objectPosition: 'center',
+              objectFit: 'contain',
+              imageRendering: 'auto',
+            }}
+          />
         </div>
+      </div>
     </div>
   );
 }

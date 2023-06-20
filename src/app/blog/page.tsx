@@ -11,12 +11,11 @@ export const metadata = {
 
 export default async function BlogPage() {
   const allPosts = await getAllPostsFromNotion();
-  const posts = allPosts.filter((post) => post.published)
+  const posts = allPosts.filter((post) => post.published);
 
   return (
     <>
-      <section className="mb-16 mt-0 space-y-8 md:mt-20">
-      </section>
+      <section className="mb-16 mt-0 space-y-8 md:mt-20"></section>
       <PostsGrid allPosts={posts} />
     </>
   );

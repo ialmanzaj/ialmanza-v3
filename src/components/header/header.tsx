@@ -1,8 +1,8 @@
 import Link from 'next/link';
 
+import Logo from '@/components/header/logo';
 import NavLink from '@/components/header/nav-link';
 import ThemeToggle from '@/components/theme-toggle';
-import Logo from '@/components/header/logo';
 
 const NAV_ITEMS = [
   { path: 'blog', name: 'Blog' },
@@ -12,8 +12,8 @@ const NAV_ITEMS = [
 export default function Header() {
   return (
     <nav className="flex justify-between py-12 sm:flex-row">
-      <Link href="/" className="self-start md:self-auto my-auto mr-3.5">
-       <Logo />
+      <Link href="/" className="my-auto mr-3.5 self-start md:self-auto">
+        <Logo />
       </Link>
       <div className="my-auto flex space-x-8  md:self-auto">
         <ul className="flex space-x-8">
@@ -25,11 +25,10 @@ export default function Header() {
               <NavLink path={item.path}>{item.name}</NavLink>
             </li>
           ))}
-          <li className='top-12'>
-          <ThemeToggle />
+          <li className="top-12">
+            <ThemeToggle />
           </li>
         </ul>
-        
       </div>
     </nav>
   );
