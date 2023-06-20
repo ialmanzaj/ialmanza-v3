@@ -22,8 +22,8 @@ export default function PostCard({
             style={{ objectFit: 'cover' }}
           />
         </div>
-        <div className="flex h-48 flex-col p-4">
-          <h3 className="my-4 line-clamp-2 h-16 text-2xl font-bold">{title}</h3>
+        <div className="flex flex-col p-4">
+          <h3 className="my-5 text-2xl font-bold">{title}</h3>
 
           <CategoryList categories={categories} />
         </div>
