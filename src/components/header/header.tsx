@@ -4,10 +4,7 @@ import Logo from '@/components/header/logo';
 import NavLink from '@/components/header/nav-link';
 import ThemeToggle from '@/components/theme-toggle';
 
-const NAV_ITEMS = [
-  { path: 'blog', name: 'Blog' },
-  { path: 'about', name: 'About' },
-];
+const NAV_ITEMS = [{ path: 'blog', name: 'Blog' }];
 
 export default function Header() {
   return (
