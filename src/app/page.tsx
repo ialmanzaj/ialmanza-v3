@@ -17,7 +17,7 @@ export default function HomePage() {
                 Hello!<br></br> I&apos;m Isaac Almanza 👋🏽
               </span>
             </h1>
-            <h2 className="leading-12 my-3 text-3xl tracking-wide text-slate-200	">
+            <h2 className="leading-12 my-3 text-3xl tracking-wide	">
               On a journey of becoming and harnessing my truest expression
             </h2>
           </div>

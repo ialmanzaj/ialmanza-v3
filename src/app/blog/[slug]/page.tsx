@@ -56,7 +56,7 @@ export default async function PostPage({
             src={post.cover}
             alt="cover"
             fill
-            style={{ objectFit: 'contain' }}
+            style={{ objectFit: 'cover' }}
           />
         </div>
         <NotionPage post={post} recordMap={recordMap} />
