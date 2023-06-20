@@ -1,7 +1,8 @@
-"use client"
-import React, { useEffect, useRef } from "react";
+'use client';
 
-const chars = "日本語☺Σ×Π#-_↑←0123456789AXTZ";
+import React, { useEffect, useRef } from 'react';
+
+const chars = '日本語☺Σ×Π#-_↑←0123456789AXTZ';
 
 interface GlitchOptions {
   selector: React.RefObject<HTMLElement>;
@@ -29,7 +30,7 @@ class Glitch {
     this.selector = options.selector;
     this.index = options.index;
     this.numberOfGlitchedLetter = options.numberOfGlitchedLetter || 0;
-    this.innerText = "";
+    this.innerText = '';
     this.charArray = [];
     this.charIndex = [];
     this.timeGlitch = options.timeGlitch;
@@ -40,8 +41,8 @@ class Glitch {
   }
 
   public init() {
-    this.innerText = this.selector.current?.innerText || "";
-    this.charArray = this.innerText.split("");
+    this.innerText = this.selector.current?.innerText || '';
+    this.charArray = this.innerText.split('');
     if (
       this.numberOfGlitchedLetter === 0 ||
       this.numberOfGlitchedLetter > this.innerText.length
@@ -67,11 +68,11 @@ class Glitch {
     for (let i = 0; i < this.numberOfGlitchedLetter; i++) {
       let randIndex = Math.floor(Math.random() * chars.length);
       let randCharIndex = this.charIndex[i];
-      if (randomString[randCharIndex] !== " ") {
+      if (randomString[randCharIndex] !== ' ') {
         randomString[randCharIndex] = chars[randIndex];
       }
     }
-    this.selector.current!.innerText = randomString.join("");
+    this.selector.current!.innerText = randomString.join('');
   }
 
   private update() {
@@ -133,45 +134,39 @@ const GlitchApp: React.FC<{ children?: React.ReactNode }> = ({ children }) => {
 
   // Function to generate random glitched text based on the original text
   const generateRandomText = (text: string) => {
-    const chars = "日本語☺Σ×Π#-_¯—→↓↑←0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZ";
-    let randomText = "";
+    const chars = '日本語☺Σ×Π#-_¯—→↓↑←0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZ';
+    let randomText = '';
     for (let i = 0; i < text.length; i++) {
-      if (text[i] !== " ") {
+      if (text[i] !== ' ') {
         const randomChar = chars[Math.floor(Math.random() * chars.length)];
         randomText += randomChar;
       } else {
-        randomText += " ";
+        randomText += ' ';
       }
     }
     return randomText;
   };
 
   useEffect(() => {
-    arrayElements.current = Array.from(document.querySelectorAll(
-      ".content"
-    )) as HTMLElement[];
+    arrayElements.current = Array.from(
+      document.querySelectorAll('.content')
+    ) as HTMLElement[];
 
     arrayElements.current.forEach((glitch, index) => {
       glitch.dataset.originalText = glitch.innerText;
-      glitch.addEventListener("mouseenter", () => startAnimation(index));
-      glitch.addEventListener("mouseleave", () => stopAnimation(index));
+      glitch.addEventListener('mouseenter', () => startAnimation(index));
+      glitch.addEventListener('mouseleave', () => stopAnimation(index));
     });
 
     return () => {
       arrayElements.current.forEach((glitch, index) => {
-        glitch.removeEventListener("mouseenter", () => startAnimation(index));
-        glitch.removeEventListener("mouseleave", () => stopAnimation(index));
+        glitch.removeEventListener('mouseenter', () => startAnimation(index));
+        glitch.removeEventListener('mouseleave', () => stopAnimation(index));
       });
     };
   }, []);
-  
-  
 
-  return (
-    <div className="glitch">
-      {children}
-    </div>
-  );
+  return <div className="glitch">{children}</div>;
 };
 
 export default GlitchApp;

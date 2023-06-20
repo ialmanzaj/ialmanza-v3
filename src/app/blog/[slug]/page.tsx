@@ -36,10 +36,12 @@ export default async function PostPage({
     );
   }
 
-  const relatedPosts: Post[] = allPosts.filter((post) => post.published).filter(
-    (p) =>
-    p.slug !== slug && p.categories.some((v) => post.categories.includes(v))
-  );
+  const relatedPosts: Post[] = allPosts
+    .filter((post) => post.published)
+    .filter(
+      (p) =>
+        p.slug !== slug && p.categories.some((v) => post.categories.includes(v))
+    );
 
   const recordMap = await getRecordMap(post.id);
 

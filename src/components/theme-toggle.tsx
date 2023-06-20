@@ -12,27 +12,26 @@ export default function ThemeToggle() {
 
   return (
     <>
-    <button
-     onClick={() =>
-      setTheme(
-        theme === 'light' ? 'dark' : theme === 'system' ? 'dark' : 'light'
-      )
-    }
-    className='p-2 ml-1 hover:bg-gray-200 dark:hover:bg-gray-700 cursor-pointer rounded-lg dark:text-gray-100'
-    >
-    {mounted && theme === 'light' ? (
-             <BsMoonFill
-             className={`${iconCN} text-black`}
-             onClick={() => setTheme('dark')}
-           />
+      <button
+        onClick={() =>
+          setTheme(
+            theme === 'light' ? 'dark' : theme === 'system' ? 'dark' : 'light'
+          )
+        }
+        className="ml-1 cursor-pointer rounded-lg p-2 hover:bg-gray-200 dark:text-gray-100 dark:hover:bg-gray-700"
+      >
+        {mounted && theme === 'light' ? (
+          <BsMoonFill
+            className={`${iconCN} text-black`}
+            onClick={() => setTheme('dark')}
+          />
         ) : (
-      
-            <BsSun
+          <BsSun
             className={`${iconCN} text-white`}
             onClick={() => setTheme('light')}
           />
         )}
-    </button>
+      </button>
     </>
   );
 }

@@ -1,3 +1,5 @@
+import { Space_Grotesk } from '@next/font/google';
+import { Analytics } from '@vercel/analytics/react';
 import 'katex/dist/katex.min.css';
 import 'prismjs/themes/prism-tomorrow.css';
 import 'react-notion-x/src/styles.css';
@@ -7,9 +9,6 @@ import Provider from '@/components/provider';
 import ScrollUpButton from '@/components/scroll-up-button';
 import '@/styles/globals.css';
 import '@/styles/paginate.css';
-import { Analytics } from '@vercel/analytics/react';
-import {Space_Grotesk} from '@next/font/google'
-
 
 export const metadata = {
   title: {
@@ -19,8 +18,8 @@ export const metadata = {
 };
 const space_grotesk = Space_Grotesk({
   subsets: ['latin'],
-  weight: ['300', '400', '700']
-})
+  weight: ['300', '400', '700'],
+});
 
 export default function RootLayout({
   children,
