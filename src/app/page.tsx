@@ -43,7 +43,7 @@ export default function HomePage() {
           </p>
           <br></br>
           <p className="text-lg font-light leading-9	tracking-normal">
-            If you'd like to get in touch, drop me a note at{' '}
+            If you&apos;d like to get in touch, drop me a note at{' '}
             <span className="decoration-3 underline underline-offset-8">
               ialmanza@proton.me
             </span>
