@@ -7,9 +7,13 @@
 }
 
 .paginate .selected {
-  @apply rounded-full bg-red-500 text-white;
+  @apply rounded-full bg-[#622d8b] text-white;
 }
 
 .paginate .disabled {
   @apply invisible;
+}
+
+.bg-brand {
+  background-color: rgb(224 213 232 / var(--tw-bg-opacity));
 }
