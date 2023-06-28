@@ -18,7 +18,7 @@ export default function HomePage() {
               </span>
             </h1>
             <h2 className="leading-12 my-3 text-3xl tracking-wide	">
-              On a journey of becoming and harnessing my truest expression
+              On a journey of creating tools to transform our financial systems and give everyone equal access
             </h2>
           </div>
           <p className="text-lg font-light	leading-9	tracking-normal">
