@@ -1,4 +1,4 @@
-import GlitchApp from '@/components/glich';
+
 
 export const metadata = {
   title: 'Welcome | Isaac Almanza',
@@ -7,7 +7,7 @@ export const metadata = {
 export default function HomePage() {
   return (
     <>
-      <GlitchApp />
+     
     </>
   );
 }

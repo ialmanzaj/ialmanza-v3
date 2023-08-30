@@ -1,5 +1,3 @@
-//import GlitchApp from '@/components/glich';
-//import Rotator from '@/components/rotator';
 import Link from 'next/link';
 
 export const metadata = {
