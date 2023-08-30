@@ -1,5 +1,6 @@
 //import GlitchApp from '@/components/glich';
-import Rotator from '@/components/rotator';
+//import Rotator from '@/components/rotator';
+import Link from 'next/link';
 
 export const metadata = {
   title: 'Isaac Almanza | Software enginer',
@@ -13,34 +14,33 @@ export default function HomePage() {
           <div className="my-10">
             <h1 className="leading-12 text-5xl tracking-wide">
               <span className="">
-                Hello!<br></br> I&apos;m Isaac Almanza 👋🏽
+                Hello!<br></br> Welcome to Isaac's Home👋🏽
               </span>
             </h1>
-            <h2 className="leading-12 my-3 text-3xl tracking-wide	">
-              On a journey of creating financial and educational tools to
-              improve people's lives
-            </h2>
+            <br></br>
           </div>
           <p className="text-lg font-light	leading-9	tracking-normal">
-            I&apos;m a software engineer, entrepreneur and digital nomad based
-            in Latam. I have been building fintech products for the last 5
-            years. Most recently at neobank{' '}
-            <a
-              className="decoration-3 underline underline-offset-8"
-              href="https://fondeadora.com/"
-            >
-              Fondeadora
-            </a>
-            . <br></br>
-            <br></br>Now building on web3, experimenting ideas with EVM based
-            smart contracts with Solidity, user interfaces, and everything in
-            between.
+            Isaac Almanza is self-taught software engineer, maker and digital
+            nomad based between Medellin and Panama. He has building fintech
+            products for the last 5 years for early-mid stage YC startups.
+          </p>
+          <br></br>
+          <p className="text-lg font-light	leading-9	tracking-normal">
+            Now he is focus on building ideas in web3 with Solidity, smart
+            contracts, EVM, UI, and everything in between.
           </p>
           <br></br>
           <p className="text-lg font-light leading-9	tracking-normal">
-            My blog and newsletter is where I share curations and rabbit holes
-            what sparks my curiosity such as philosophy, mental models,
-            blockchain, and other interesting ideas.
+            My{' '}
+            <Link
+              className="decoration-3 underline underline-offset-8"
+              href="/blog"
+            >
+              blog
+            </Link>{' '}
+            and newsletter is where I share my rabbit holes what sparks my
+            curiosity such as philosophy, mental models, blockchain, finance and
+            other interesting ideas.
           </p>
           <br></br>
           <p className="text-lg font-light leading-9	tracking-normal">
