@@ -40,15 +40,23 @@ jobs:
           embed-description: "${{ steps.umamiReportStep.outputs.umamiReport }}"
           embed-thumbnail-url: "https://umami.my-example.com"
           embed-image-url: "https://raw.githubusercontent.com/umami-software/website/master/assets/logo.svg"
-
-      - name: Send Umami report to discord channel as file when big
-        uses: tsickert/discord-webhook@v4.0.0
-        if: ${{ steps.umamiReportStep.outputs.umamiReportLength >= 4096 }}
+          
+      - name: Send email
+        uses: devellany/send-mailer@v1.0.2
         with:
-          webhook-url: ${{ secrets.UMAMI_TO_DISCORD_WEBHOOK_URL }}
-          content: ${{ steps.umamiReportStep.outputs.umamiOneLineReport }}
-          username: "umami report"
-          filename: ${{ steps.umamiReportStep.outputs.umamiReportFile }}
+            host: smtp.resend.com
+            port: 465
+            account: ${{secrets.ACCOUNT}}
+            password: ${{secrets.MAIL_PASSWORD}}
+            sender: devellany
+            from: ${{secrets.MAIL_ADDRESS}}
+            to: isaac.almanza19@gmail.com
+            subject: umami report
+            body: your messages.
+      # Optional content type (defaults to text/plain)
+            contentType: text/plain
+      # Optional attachment files (JSON type. require property 'path')
+            attachments: '[{"path": "${{ steps.umamiReportStep.outputs.umamiReportFile }}" }]'
 
       - name: Have a look at !secret results from next step using outputs
         run: |
