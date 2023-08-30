@@ -14,7 +14,7 @@ export default function HomePage() {
           <div className="my-10">
             <h1 className="leading-12 text-5xl tracking-wide">
               <span className="">
-                Hello!<br></br> Welcome to Isaac's Home👋🏽
+                Hello!<br></br> Welcome to Isaac&apos;s Home👋🏽
               </span>
             </h1>
             <br></br>
