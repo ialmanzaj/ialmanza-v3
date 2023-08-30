@@ -1,5 +1,4 @@
 import { Space_Grotesk } from '@next/font/google';
-import { Analytics } from '@vercel/analytics/react';
 import 'katex/dist/katex.min.css';
 import 'prismjs/themes/prism-tomorrow.css';
 import 'react-notion-x/src/styles.css';
@@ -28,6 +27,13 @@ export default function RootLayout({
 }) {
   return (
     <html>
+      <head>
+        <script
+          async
+          src="https://analytics.umami.is/script.js"
+          data-website-id="0acb4c4b-3d04-429d-81ba-aba907167436"
+        ></script>
+      </head>
       <body className="text-primary bg-primary relative mx-auto mb-20 flex w-full max-w-screen-xl flex-col px-[6vw] md:px-[5vw]">
         <Provider>
           <Header />
@@ -36,7 +42,6 @@ export default function RootLayout({
             <ScrollUpButton />
           </div>
         </Provider>
-        <Analytics />
       </body>
     </html>
   );
