@@ -5,9 +5,7 @@
 :root {
   --notion-font: inherit;
 }
-.dark {
-  --fg-color: #fff;
-}
+
 @layer components {
   .bg-primary {
     @apply bg-[#fff] dark:bg-black;
