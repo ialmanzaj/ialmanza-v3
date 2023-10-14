@@ -7,52 +7,73 @@ export const metadata = {
 export default function HomePage() {
   return (
     <>
-      <section>
-        <div className="mx-auto mt-20 max-w-2xl flex-1">
-          <div className="my-10">
-            <h1 className="leading-12 text-5xl tracking-wide">
-              <span className="">
-                Hello!<br></br> Welcome to Isaac&apos;s Home👋🏽
-              </span>
-            </h1>
-            <br></br>
-          </div>
-          <p className="text-lg font-light	leading-9	tracking-normal">
+      <div className="mx-auto mt-20 max-w-2xl flex-1 font-light leading-9 tracking-normal">
+        <section className="my-10">
+          <h1 className="leading-12 text-4xl tracking-wide">
+            <span className="">
+              Hey!<br></br> Welcome to Isaac Almanza&apos;s Home👋🏽
+            </span>
+          </h1>
+          <br></br>
+        </section>
+        <section>
+          <p className="text-lg">
             Isaac Almanza is self-taught software engineer, maker and digital
-            nomad based between Medellin and Panama. He has building fintech
-            products for the last 5 years for early-mid stage YC startups.
+            nomad based LATAM. Currently building crypto experiments and ideas
+            with smart contracts, Solidity, EVM, UI, and everything in between.
           </p>
           <br></br>
-          <p className="text-lg font-light	leading-9	tracking-normal">
-            Now he is focus on building ideas in web3 with Solidity, smart
-            contracts, EVM, UI, and everything in between.
-          </p>
-          <br></br>
-          <p className="text-lg font-light leading-9	tracking-normal">
-            My{' '}
+        </section>
+
+        <section>
+          <p className="text-lg font-light	tracking-normal">
+            I write on{' '}
             <Link
               className="decoration-3 underline underline-offset-8"
               href="/blog"
             >
-              blog
+              my blog
             </Link>{' '}
-            and newsletter is where I share my rabbit holes what sparks my
-            curiosity such as philosophy, mental models, blockchain, finance and
-            other interesting ideas.
+            about my learnings and also in my{' '}
+            <a
+              className="decoration-3 underline underline-offset-8"
+              href="https://ialmanza.substack.com/"
+            >
+              newsletter
+            </a>{' '}
+            share my curiosity such as cryto/defi, philosophy, mental models,
+            nomading & life.
           </p>
           <br></br>
-          <p className="text-lg font-light leading-9	tracking-normal">
-            If you&apos;d like to get in touch, drop me a note at{' '}
+        </section>
+        <section>
+          <h3 className="text-2xl">Projects</h3>
+          <ul className="my-8 list-disc px-8">
+            <li>
+              <span className="font-bold">
+                <a
+                  className="decoration-3 underline underline-offset-8"
+                  href="https://web3lingo.com/"
+                >
+                  Web3lingo
+                </a>
+              </span>
+              : is a platform that gamifies education to help developers to get
+              new skills in the web3 development and security.
+            </li>
+          </ul>
+          <p className="text-lg font-light	leading-9	tracking-normal"></p>
+          <br></br>
+        </section>
+        <section>
+          <h3 className="text-2xl">How can I help you?</h3>
+         
+          <p className="text-lg font-light	">
+            For any inquiries regarding contracting/hiring or colaboration, drop
+            me a note at{' '}
             <span className="decoration-3 underline underline-offset-8">
               hello@ialmanza.com
             </span>
-            ,{' '}
-            <a
-              className="decoration-3 underline underline-offset-8"
-              href="https://www.linkedin.com/in/ialmanzaj/"
-            >
-              linkedin
-            </a>
             , or via{' '}
             <a
               className="decoration-3 underline underline-offset-8"
@@ -61,8 +82,8 @@ export default function HomePage() {
               twitter dms
             </a>
           </p>
-        </div>
-      </section>
+        </section>
+      </div>
     </>
   );
 }

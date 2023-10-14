@@ -19,7 +19,7 @@ export default function PostsGrid({ allPosts }: { allPosts: Post[] }) {
       {posts.length ? (
         <ul
           id="posts-grid"
-          className="grid w-full grid-cols-1 gap-x-8 gap-y-32 md:grid-cols-3 xl:grid-cols-3"
+          className="flex flex-col space-y-1 mb-4"
         >
           {posts.map((post) => (
             <li key={post.slug}>

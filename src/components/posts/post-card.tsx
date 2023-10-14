@@ -12,22 +12,19 @@ export default function PostCard({
   post: Post;
 }) {
   return (
-    <Link href={`/blog/${slug}`}>
-      <article className="mx-auto flex max-w-[25rem] flex-col overflow-hidden rounded-xl shadow-xl transition-all duration-300 hover:scale-[1.05] hover:shadow-2xl dark:shadow-black">
-        <div className="relative h-60">
-          <Image
-            src={cover}
-            alt="cover image"
-            fill
-            style={{ objectFit: 'cover' }}
-          />
-        </div>
-        <div className="flex flex-col p-4">
-          <h3 className="my-5 text-2xl font-bold">{title}</h3>
-
-          <CategoryList categories={categories} />
-        </div>
-      </article>
-    </Link>
+    <div className="flex items-center	">
+      <p className="font-light text-sm">{date}</p>
+      <Link
+        href={`/blog/${slug}`}
+        className="decoration-3 underline underline-offset-8"
+      >
+        <article className="flex w-full flex-col duration-300  ">
+          <div className="flex flex-col p-4">
+            <h3 className="text-2xl">{title}</h3>
+            <CategoryList categories={categories} />
+          </div>
+        </article>
+      </Link>
+    </div>
   );
 }
