@@ -62,7 +62,9 @@ export default function HomePage() {
               new skills in the web3 development and security.
             </li>
           </ul>
-          <p className="text-lg font-light	leading-9	tracking-normal"></p>
+          <p className="text-lg">
+          <span className='font-bold'>Formerly</span>: Fondeadora, other fintech startups.
+          </p>
           <br></br>
         </section>
         <section>
